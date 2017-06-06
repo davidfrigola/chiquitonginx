@@ -9,4 +9,5 @@ See Makefile or run `make` for help
 # Requirements
 
 * docker
+* docker-compose
 * crazyness
