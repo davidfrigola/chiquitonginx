@@ -1,4 +1,4 @@
-FROM nginx:1.13.1-alpine
+FROM jboesl/docker-nginx-headers-more
 
 MAINTAINER Chiquito "chiquito@mailinator.com"
 
