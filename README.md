@@ -8,5 +8,5 @@ See Makefile or run `make` for help
 
 # Requirements
 
-docker
-crazyness
+* docker
+* crazyness
