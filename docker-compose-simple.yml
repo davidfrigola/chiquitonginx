@@ -1,0 +1,21 @@
+version: "2"
+services:
+
+   server:
+      build:
+        context: ./nginx
+        dockerfile: Dockerfile-simple
+      image: chiquito/nginx-simple
+      ports:
+        - 9000:80
+      container_name: chiquito_web_simple
+
+   app:
+      build:
+        context: ./app
+        dockerfile: Dockerfile
+      image: chiquito/app
+      ports:
+        - 8080:8080
+      container_name: chiquito_app
+      
