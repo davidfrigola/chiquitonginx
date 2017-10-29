@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+gem 'test-unit'
+gem 'cucumber'
+gem 'httparty'
+gem 'phantomjs' 
+gem 'bundler' 
+gem 'minitest'
