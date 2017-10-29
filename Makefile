@@ -1,5 +1,5 @@
 default:
-	@echo "Use make build|run|stop build-simple|run-simple|stop-simple"
+	@echo "Use make build|run|stop build-simple|run-simple|stop-simple|build-tests|run-tests"
 
 build:
 	docker-compose build
@@ -18,4 +18,10 @@ stop:
 
 stop-simple:
 	docker-compose -f docker-compose-simple.yml stop
+
+build-tests:
+	docker-compose -f docker-compose-test.yml build
+
+run-tests:
+	docker-compose -f docker-compose-test.yml up
 
