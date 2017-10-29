@@ -1,5 +1,5 @@
 default:
-	@echo "Use make build|run|stop build-simple|run-simple|stop-simple|build-tests|run-tests"
+	@echo "Use make build|run|stop|build-simple|run-simple|stop-simple|build-tests|run-tests"
 
 build:
 	docker-compose build
