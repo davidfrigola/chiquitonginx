@@ -24,3 +24,7 @@ services:
         dockerfile: Dockerfile
       image: chiquito/test
       container_name: chiquito_test      
+      depends_on:
+           - "app"
+           - "server"
+
