@@ -20,7 +20,7 @@ const endpoints = [100,101,102,
 
 endpoints.forEach(function(endpoint) {
 	app.get('/'+endpoint,function(req,res){
-		res.status(endpoint).send(endpoint);
+		res.sendStatus(endpoint);
 	});
 });
 
