@@ -10,5 +10,6 @@ before_install:
   - docker-compose up -d
 
 script:
-  - ./test/test-chiquito-app/cuke.sh
+  - cd /test/test-chiquito-app
+  - bundle install --path=vendor && bundle exec cucumber
 
