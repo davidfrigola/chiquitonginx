@@ -1,0 +1,15 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+before_install:
+  - docker-compose build
+  - docker-compose up -d
+
+script:
+  - cd ./test/test-chiquito-app
+  - bundle install --path=vendor && bundle exec cucumber
+
