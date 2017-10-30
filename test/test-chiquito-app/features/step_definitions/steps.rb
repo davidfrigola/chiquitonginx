@@ -2,7 +2,7 @@ require 'minitest/autorun'
 
 When(/^I request (.+)$/) do |endpoint|
 	puts "When #{endpoint}"
-	response = HTTParty.get("http://localhost:8000/#{endpoint}")
+	response = HTTParty.get("http://localhost:9000/#{endpoint}")
 	@http_response_code = response.code
 	@http_response_header = response.headers["X-Chiquito"]
 end
