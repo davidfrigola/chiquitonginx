@@ -1,5 +1,12 @@
 default:
 	@echo "Use make build|run|stop|build-simple|run-simple|stop-simple|build-tests|run-tests"
+	@echo "make build - builds the simple docker compose definition"
+	@echo "make run - starts docker compose "
+	@echo "make run-simple - starts simple docker compose definition"
+	@echo "make stop - stops docker compose running"
+	@echo "make stop-simple - stops simple docker compose definition"
+	@echo "make build-tests - builds test docker compose definition"
+	@echo "make run-tests - rungs test docker compose defintion - CTRL+C when tests done to stop it"
 
 build:
 	docker-compose build
