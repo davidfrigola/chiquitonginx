@@ -1,0 +1,6 @@
+<% common = "--tags ~@wip --strict" %>
+
+local: TEST_URL=http://localhost:9000
+docker: TEST_URL=http://chiquito_web
+html_report: --format progress --format html --out=features_report.html
+default: --profile html_report --profile local

@@ -11,5 +11,5 @@ before_install:
 
 script:
   - cd ./test/test-chiquito-app
-  - bundle install --path=vendor && bundle exec cucumber
+  - bundle install --path=vendor && bundle exec cucumber -p local
 
