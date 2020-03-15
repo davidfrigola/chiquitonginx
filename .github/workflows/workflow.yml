@@ -1,0 +1,23 @@
+name: Build, run and test app
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - 'issue*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: install ruby bundler
+      run: sudo gem install bundler
+    - name: build and run app
+      run : docker-compose up -d
+    - name: test the app
+      run : |
+        cd ./test/test-chiquito-app
+        bundle install --path=vendor && bundle exec cucumber -p local
