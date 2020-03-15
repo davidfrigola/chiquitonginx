@@ -13,8 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: install ruby
-      run: sudo apt-get install ruby-full
+    - name: install ruby bundler
+      run: gem install bundler
     - name: build and run app
       run : docker-compose up -d
     - name: test the app
