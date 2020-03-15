@@ -25,3 +25,9 @@ jobs:
         cache-available: ${{ steps.cache.outputs.cache-hit == 'true' }}
     - name: Print version
       run: ${{ steps.ruby.outputs.ruby-path }} --version
+    - name: build and run app
+      run : docker-compose up -d
+    - name: test the app
+      run : |
+        cd ./test/test-chiquito-app
+        bundle install --path=vendor && bundle exec cucumber -p local
