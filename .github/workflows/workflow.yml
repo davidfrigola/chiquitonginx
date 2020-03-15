@@ -1,0 +1,27 @@
+name: Example install of Ruby 2.6.5 (cached)
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - 'issue*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/cache@preview
+      id: cache
+      with:
+        path: ~/local/rubies
+        key: ruby-2.6.5
+    - uses: clupprich/ruby-build-action@master
+      id: ruby
+      with:
+        ruby-version: 2.6.5
+        cache-available: ${{ steps.cache.outputs.cache-hit == 'true' }}
+    - name: Print version
+      run: ${{ steps.ruby.outputs.ruby-path }} --version
