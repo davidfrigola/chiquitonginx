@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: install ruby
-      run: apt-get install ruby-full
+      run: sudo apt-get install ruby-full
     - name: build and run app
       run : docker-compose up -d
     - name: test the app
