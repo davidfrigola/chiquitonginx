@@ -1,0 +1,20 @@
+version: "2"
+services:
+
+   server:
+      build:
+        context: ./nginx
+        dockerfile: Dockerfile-python
+      image: chiquito/nginx-python
+      ports:
+        - 9000:80
+      container_name: chiquito_web_python
+
+   apppython:
+      build:
+        context: ./app-python
+        dockerfile: Dockerfile
+      image: chiquito/app-python
+      ports:
+        - 8081:8080
+      container_name: chiquito_app_python

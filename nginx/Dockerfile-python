@@ -3,4 +3,4 @@ FROM jboesl/docker-nginx-headers-more
 MAINTAINER Chiquito "chiquito@mailinator.com"
 
 
-COPY conf/nginx-lb.conf /etc/nginx/nginx.conf
+COPY conf/nginx-python.conf /etc/nginx/nginx.conf
