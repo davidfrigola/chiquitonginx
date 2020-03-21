@@ -11,6 +11,7 @@ See Makefile or run `make` for help
 * docker
 * docker-compose
 * crazyness
+* python3 and pip 
 
 # Tasks
 

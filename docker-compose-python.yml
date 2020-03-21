@@ -4,20 +4,11 @@ services:
    server:
       build:
         context: ./nginx
-        dockerfile: Dockerfile
-      image: chiquito/nginx
+        dockerfile: Dockerfile-python
+      image: chiquito/nginx-python
       ports:
         - 9000:80
-      container_name: chiquito_web
-
-   app:
-      build:
-        context: ./app
-        dockerfile: Dockerfile
-      image: chiquito/app
-      ports:
-        - 8080:8080
-      container_name: chiquito_app
+      container_name: chiquito_web_python
 
    apppython:
       build:

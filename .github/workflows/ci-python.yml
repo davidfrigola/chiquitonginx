@@ -1,4 +1,4 @@
-name: Build, run and test app node based
+name: Build, run and test app python based
 
 on:
   pull_request:
@@ -16,8 +16,8 @@ jobs:
     - name: install ruby bundler
       run: sudo gem install bundler
     - name: build and run app
-      run : docker-compose up -d
-    - name: test the app
+      run : docker-compose -f docker-compose-python.yml up -d
+    - name: test the python app
       run : |
         cd ./test/test-chiquito-app
         bundle install --path=vendor && bundle exec cucumber -p local
