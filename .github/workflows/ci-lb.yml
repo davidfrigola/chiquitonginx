@@ -1,4 +1,4 @@
-name: Build, run and test app python based
+name: Build, run and test loadbalanced nginx config
 
 on:
   pull_request:
