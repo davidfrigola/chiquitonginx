@@ -21,3 +21,10 @@ jobs:
       run : |
         cd ./test/test-chiquito-app
         bundle install --path=vendor && bundle exec cucumber -p local
+    - name: test the app with Load balancing
+      run : |
+        cd ../..
+        docker-compose down
+        docker-compose -f docker-compose-lb.yml
+        cd ./test/test-chiquito-app
+        bundle install --path=vendor && bundle exec cucumber -p local
