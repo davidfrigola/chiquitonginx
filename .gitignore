@@ -1,3 +1,5 @@
 test/.bundle
 test/test-chiquito-app/features_report.html
 venv
+*.tfstate*
+*.terraform*
