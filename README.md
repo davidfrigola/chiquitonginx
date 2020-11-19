@@ -28,16 +28,16 @@ Requires minikube and terraform (0.13)
 
 Build the containers using
 ```
-docker-compose -f docker-compose-k8s.yml build
+docker-compose -f docker-compose-simple.yml build
 ```
 
 Then go to `/terraform/environment/local` and run `terraform apply`
-A new namespace `chiquito-namespace` will be created , with a `chiquito-pod` including 2 containers : `chiquito-nginx` and `app` (nodejs version)
+A new namespace `chiquito-namespace` will be created , with a `chiquito-deployment` including 3 pods with 2 containers each : `chiquito-nginx` and `app` (nodejs version)
 
 Port forward for `80` so we can access nginx container
 
 ```
-kubectl port-forward pods/chiquito-pod 8999:80 --namespace chiquito-local
+kubectl port-forward deployment/chiquito-deployment 8999:80 -n chiquito-local
 ```
 
 Then curl :
@@ -66,4 +66,10 @@ Trying 127.0.0.1:8999...
 <
 * Connection #0 to host localhost left intact
 
+```
+
+
+To clean up , remove deployment and all pods using
+```
+terraform destroy
 ```
