@@ -3,7 +3,8 @@ resource "kubernetes_deployment" "chiquito-deployment" {
     name = "chiquito-deployment"
     namespace = "chiquito-local"
     labels = {
-      test = "chiquito-test"
+      system = "chiquito-system"
+      app = "chiquito-app"
     }
   }
 
@@ -12,14 +13,15 @@ resource "kubernetes_deployment" "chiquito-deployment" {
 
     selector {
       match_labels = {
-        test = "chiquito-test"
+        system = "chiquito-system"
       }
     }
 
     template {
       metadata {
         labels = {
-          test = "chiquito-test"
+          system = "chiquito-system"
+          app = "chiquito-app"
         }
       }
 

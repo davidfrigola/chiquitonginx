@@ -34,7 +34,18 @@ docker-compose -f docker-compose-simple.yml build
 Then go to `/terraform/environment/local` and run `terraform apply`
 A new namespace `chiquito-namespace` will be created , with a `chiquito-deployment` including 3 pods with 2 containers each : `chiquito-nginx` and `app` (nodejs version)
 
-Port forward for `80` so we can access nginx container
+Then check for the ingress via :
+```
+kubectl get ingress chiquito-ingress -n chiquito-local
+
+
+NAME               CLASS    HOSTS   ADDRESS      PORTS   AGE
+chiquito-ingress   <none>   *       172.17.0.2   80      20m
+
+```
+And you can curl `curl http://172.17.0.2/202` or any other endpoint.
+
+Ignoring the ingress, you can go to the deployment by port forwarding `80` so we can access nginx container
 
 ```
 kubectl port-forward deployment/chiquito-deployment 8999:80 -n chiquito-local
